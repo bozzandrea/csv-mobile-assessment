@@ -15,8 +15,9 @@ class Friend: Codable {
 class FTApiRepo {
     var session: URLSession!
     var cachedUrl: URL?
-    func getFriends(completion: @escaping ([Friend]?, Error?) -> Void) {
-        
+    func getFriends(completion: @escaping ([Friend]?, Error?) -> Void){
+        let apiUrl = apiBaseURL.appendingPathComponent(usersEp)
+        session.dataTask(with: apiUrl) { (_, _, _) in }
     }
 }
 

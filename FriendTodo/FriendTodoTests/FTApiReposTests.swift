@@ -24,7 +24,7 @@ class FTApiReposTests: XCTestCase {
       let mockURLSession  = MockURLSession()
       apiRespository.session = mockURLSession
       apiRespository.getFriends() { friends, error in }
-      XCTAssertEqual(mockURLSession.cachedUrl?.host, "https://jsonplaceholder.typicode.com")
+      XCTAssertEqual(mockURLSession.cachedUrl?.host, "jsonplaceholder.typicode.com")
       XCTAssertEqual(mockURLSession.cachedUrl?.path, "/users")
     }
     
