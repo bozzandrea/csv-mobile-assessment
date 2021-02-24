@@ -7,19 +7,17 @@
 
 import Foundation
 
+class Friend: Codable {
+    let name: String
+    let username: String
+}
+
 class FTApiRepo {
-    
-    class Friend: Codable {
-        let name: String
-        let username: String
+    var session: URLSession!
+    var cachedUrl: URL?
+    func getFriends(completion: @escaping ([Friend]?, Error?) -> Void) {
+        
     }
-    
-    class APIRepository {
-        func getFriends(completion: @escaping ([Friend]?, Error?) -> Void) {
-            
-        }
-    }
-    
 }
 
 
