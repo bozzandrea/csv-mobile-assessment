@@ -19,6 +19,10 @@ class FTApiReposTests: XCTestCase {
       }
     }
     
+    /**
+     Get Users From API Sets up URL Host and Path as Expected
+      */
+    
     func testGetFriendsWithExpectedURLHostAndPath() {
       let apiRespository = FTApiRepo()
       let mockURLSession  = MockURLSession()
@@ -26,6 +30,26 @@ class FTApiReposTests: XCTestCase {
       apiRespository.getFriends() { friends, error in }
       XCTAssertEqual(mockURLSession.cachedUrl?.host, "jsonplaceholder.typicode.com")
       XCTAssertEqual(mockURLSession.cachedUrl?.path, "/users")
+    }
+    
+    /**
+     Get Users From API Successfully Returns List of Episodes
+      */
+    
+    func testGetFriendsSuccessReturnsFriends() {
+      let apiRespository = FTApiRepo()
+      let mockURLSession  = MockURLSession()
+      apiRespository.session = mockURLSession
+      let friendsExpectation = expectation(description: "friends")
+      var friendsResponse: [Friend]?
+      
+      apiRespository.getFriends { (friends, error) in
+        friendsResponse = friends
+        friendsExpectation.fulfill()
+      }
+      waitForExpectations(timeout: 1) { (error) in
+        XCTAssertNotNil(friendsResponse)
+      }
     }
     
     
