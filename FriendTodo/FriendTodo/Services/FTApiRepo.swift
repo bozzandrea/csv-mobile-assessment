@@ -17,19 +17,23 @@ class FTApiRepo {
     var cachedUrl: URL?
     
     /**
-      Get friends list 
-
-      - Parameters:
-    
-      */
+     Get friends list
+     
+     - Parameters:
+     
+     */
     func getFriends(completion: @escaping ([Friend]?, Error?) -> Void){
         let apiUrl = apiBaseURL.appendingPathComponent(usersEp)
         session.dataTask(with: apiUrl) { (data, response, error) in
-          guard let data = data else { return }
-          let movies = try! JSONDecoder().decode([Friend].self, from: data)
-          completion(movies, nil)
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            guard let data = data else { return }
+            let movies = try! JSONDecoder().decode([Friend].self, from: data)
+            completion(movies, nil)
         }.resume()
-
+        
     }
 }
 
