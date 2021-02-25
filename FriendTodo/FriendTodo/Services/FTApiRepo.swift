@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-class Friend: Codable {
+class Friend: Codable, Identifiable {
     let name: String
     let username: String
 }
@@ -24,6 +25,7 @@ class FTApiRepo {
      */
     func getFriends(completion: @escaping ([Friend]?, Error?) -> Void){
         let apiUrl = apiBaseURL.appendingPathComponent(usersEp)
+        let session = URLSession(configuration: .default)
         session.dataTask(with: apiUrl) { (data, response, error) in
             guard error == nil else {
                 completion(nil, error)
@@ -34,8 +36,8 @@ class FTApiRepo {
                 return
             }
             do {
-                let movies = try JSONDecoder().decode([Friend].self, from: data)
-                completion(movies, nil)
+                let friends = try JSONDecoder().decode([Friend].self, from: data)
+                completion(friends, nil)
             } catch {
                 completion(nil, error)
             }

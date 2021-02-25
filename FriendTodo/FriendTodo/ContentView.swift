@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var friends: [Friend] = []
+    let apiRespository = FTApiRepo()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(friends) { friend in
+            
+            Text(friend.username)
+                .font(.headline)
+            Text(friend.name)
+                .font(.subheadline)
+            
+        }
+        .onAppear {
+            apiRespository.getFriends { (friends, error) in
+                self.friends = friends ?? []
+            }
+        }
+        .padding()
     }
 }
 
