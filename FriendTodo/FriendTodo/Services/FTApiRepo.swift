@@ -7,19 +7,40 @@
 
 import Foundation
 
+class Friend: Codable {
+    let name: String
+    let username: String
+}
+
 class FTApiRepo {
+    var session: URLSession!
+    var cachedUrl: URL?
     
-    class Friend: Codable {
-        let name: String
-        let username: String
+    /**
+     Get friends list
+     
+     - Parameters:
+     
+     */
+    func getFriends(completion: @escaping ([Friend]?, Error?) -> Void){
+        let apiUrl = apiBaseURL.appendingPathComponent(usersEp)
+        session.dataTask(with: apiUrl) { (data, response, error) in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            guard let data = data else {
+                completion(nil, NSError(domain: "no data", code: 10, userInfo: nil))
+                return
+            }
+            do {
+                let movies = try JSONDecoder().decode([Friend].self, from: data)
+                completion(movies, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }.resume()
     }
-    
-    class APIRepository {
-        func getFriends(completion: @escaping ([Friend]?, Error?) -> Void) {
-            
-        }
-    }
-    
 }
 
 

@@ -13,9 +13,11 @@
 		2807EF7925E520E500CDC86F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2807EF7825E520E500CDC86F /* Preview Assets.xcassets */; };
 		2807EF8425E520E600CDC86F /* FriendTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807EF8325E520E600CDC86F /* FriendTodoTests.swift */; };
 		2807EF8F25E520E600CDC86F /* FriendTodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807EF8E25E520E600CDC86F /* FriendTodoUITests.swift */; };
-		2807EFA325E5217000CDC86F /* FTApiReposTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807EFA225E5217000CDC86F /* FTApiReposTest.swift */; };
 		2807EFA925E5220500CDC86F /* FTApiRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807EFA825E5220500CDC86F /* FTApiRepo.swift */; };
 		2807EFAA25E5220500CDC86F /* FTApiRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807EFA825E5220500CDC86F /* FTApiRepo.swift */; };
+		2899C6BE25E6A1B300396ACA /* FTApiReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899C6BD25E6A1B300396ACA /* FTApiReposTests.swift */; };
+		2899C6CA25E6A4AA00396ACA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899C6C925E6A4AA00396ACA /* Configuration.swift */; };
+		2899C6CB25E6A4AA00396ACA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899C6C925E6A4AA00396ACA /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,9 @@
 		2807EF8A25E520E600CDC86F /* FriendTodoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendTodoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2807EF8E25E520E600CDC86F /* FriendTodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTodoUITests.swift; sourceTree = "<group>"; };
 		2807EF9025E520E600CDC86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2807EFA225E5217000CDC86F /* FTApiReposTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTApiReposTest.swift; sourceTree = "<group>"; };
 		2807EFA825E5220500CDC86F /* FTApiRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTApiRepo.swift; sourceTree = "<group>"; };
+		2899C6BD25E6A1B300396ACA /* FTApiReposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTApiReposTests.swift; sourceTree = "<group>"; };
+		2899C6C925E6A4AA00396ACA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 		2807EF7025E520E300CDC86F /* FriendTodo */ = {
 			isa = PBXGroup;
 			children = (
+				2899C6C825E6A48C00396ACA /* Configurations */,
 				2807EFA725E521BE00CDC86F /* Services */,
 				2807EF7125E520E300CDC86F /* FriendTodoApp.swift */,
 				2807EF7325E520E300CDC86F /* ContentView.swift */,
@@ -123,7 +127,7 @@
 			children = (
 				2807EF8325E520E600CDC86F /* FriendTodoTests.swift */,
 				2807EF8525E520E600CDC86F /* Info.plist */,
-				2807EFA225E5217000CDC86F /* FTApiReposTest.swift */,
+				2899C6BD25E6A1B300396ACA /* FTApiReposTests.swift */,
 			);
 			path = FriendTodoTests;
 			sourceTree = "<group>";
@@ -143,6 +147,14 @@
 				2807EFA825E5220500CDC86F /* FTApiRepo.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2899C6C825E6A48C00396ACA /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				2899C6C925E6A4AA00396ACA /* Configuration.swift */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +288,7 @@
 			files = (
 				2807EFA925E5220500CDC86F /* FTApiRepo.swift in Sources */,
 				2807EF7425E520E300CDC86F /* ContentView.swift in Sources */,
+				2899C6CA25E6A4AA00396ACA /* Configuration.swift in Sources */,
 				2807EF7225E520E300CDC86F /* FriendTodoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2807EFAA25E5220500CDC86F /* FTApiRepo.swift in Sources */,
-				2807EFA325E5217000CDC86F /* FTApiReposTest.swift in Sources */,
 				2807EF8425E520E600CDC86F /* FriendTodoTests.swift in Sources */,
+				2899C6CB25E6A4AA00396ACA /* Configuration.swift in Sources */,
+				2899C6BE25E6A1B300396ACA /* FTApiReposTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
