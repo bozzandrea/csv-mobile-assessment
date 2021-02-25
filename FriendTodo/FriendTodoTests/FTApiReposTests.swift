@@ -101,6 +101,25 @@ class FTApiReposTests: XCTestCase {
       }
     }
     
+    /**
+     Get Users From API Fails and  Returns error
+     */
+    
+    func testGetMoviesWhenEmptyDataReturnsError() {
+      let apiRespository = FTApiRepo()
+      let mockURLSession  = MockURLSession(data: nil, urlResponse: nil, error: nil)
+      apiRespository.session = mockURLSession
+      let errorExpectation = expectation(description: "error")
+      var errorResponse: Error?
+      apiRespository.getFriends { (friends, error) in
+        errorResponse = error
+        errorExpectation.fulfill()
+      }
+      waitForExpectations(timeout: 1) { (error) in
+        XCTAssertNotNil(errorResponse)
+      }
+    }
+    
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
