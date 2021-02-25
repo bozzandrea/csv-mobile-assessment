@@ -8,6 +8,10 @@
 import XCTest
 @testable import FriendTodo
 
+/**
+ Mocking server call; mock URLSessionDataTask
+ */
+
 class MockTask: URLSessionDataTask {
     private let data: Data?
     private let urlResponse: URLResponse?
@@ -29,6 +33,10 @@ class MockTask: URLSessionDataTask {
         }
     }
 }
+
+/**
+ Mocking server call; mock URLSession
+ */
 
 class MockURLSession: URLSession {
     var cachedUrl: URL?
