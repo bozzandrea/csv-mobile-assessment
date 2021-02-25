@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		2899C6CA25E6A4AA00396ACA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899C6C925E6A4AA00396ACA /* Configuration.swift */; };
 		2899C6CB25E6A4AA00396ACA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899C6C925E6A4AA00396ACA /* Configuration.swift */; };
 		2899C6E925E861F900396ACA /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899C6E425E8613600396ACA /* ContentViewTests.swift */; };
+		2899C6F225E8641E00396ACA /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 2899C6F125E8641E00396ACA /* SwiftUIPullToRefresh */; };
+		2899C6F825E86B5900396ACA /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 2899C6F725E86B5900396ACA /* SwiftUIRefresh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2899C6F825E86B5900396ACA /* SwiftUIRefresh in Frameworks */,
+				2899C6F225E8641E00396ACA /* SwiftUIPullToRefresh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +180,10 @@
 			dependencies = (
 			);
 			name = FriendTodo;
+			packageProductDependencies = (
+				2899C6F125E8641E00396ACA /* SwiftUIPullToRefresh */,
+				2899C6F725E86B5900396ACA /* SwiftUIRefresh */,
+			);
 			productName = FriendTodo;
 			productReference = 2807EF6E25E520E300CDC86F /* FriendTodo.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +255,10 @@
 				Base,
 			);
 			mainGroup = 2807EF6525E520E300CDC86F;
+			packageReferences = (
+				2899C6F025E8641E00396ACA /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */,
+				2899C6F625E86B5900396ACA /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
+			);
 			productRefGroup = 2807EF6F25E520E300CDC86F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -616,6 +628,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2899C6F025E8641E00396ACA /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/SwiftUI-PullToRefresh";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		2899C6F625E86B5900396ACA /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2899C6F125E8641E00396ACA /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2899C6F025E8641E00396ACA /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */;
+			productName = SwiftUIPullToRefresh;
+		};
+		2899C6F725E86B5900396ACA /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2899C6F625E86B5900396ACA /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2807EF6625E520E300CDC86F /* Project object */;
 }
