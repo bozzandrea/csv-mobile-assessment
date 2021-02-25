@@ -33,10 +33,13 @@ class FTApiRepo {
                 completion(nil, NSError(domain: "no data", code: 10, userInfo: nil))
                 return
             }
-            let movies = try! JSONDecoder().decode([Friend].self, from: data)
-            completion(movies, nil)
+            do {
+                let movies = try JSONDecoder().decode([Friend].self, from: data)
+                completion(movies, nil)
+            } catch {
+                completion(nil, error)
+            }
         }.resume()
-        
     }
 }
 
