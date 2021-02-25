@@ -15,9 +15,21 @@ class Friend: Codable {
 class FTApiRepo {
     var session: URLSession!
     var cachedUrl: URL?
+    
+    /**
+      Get friends list 
+
+      - Parameters:
+    
+      */
     func getFriends(completion: @escaping ([Friend]?, Error?) -> Void){
         let apiUrl = apiBaseURL.appendingPathComponent(usersEp)
-        session.dataTask(with: apiUrl) { (_, _, _) in }
+        session.dataTask(with: apiUrl) { (data, response, error) in
+          guard let data = data else { return }
+          let movies = try! JSONDecoder().decode([Friend].self, from: data)
+          completion(movies, nil)
+        }.resume()
+
     }
 }
 

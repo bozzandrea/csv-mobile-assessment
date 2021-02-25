@@ -61,11 +61,11 @@ class FTApiReposTests: XCTestCase {
     }
     
     /**
-     Get Users From API Successfully Returns List of Episodes
+     Get Users From API Successfully Returns List of Friend
      */
     
     func testGetFriendsSuccessReturnsFriends() {
-        let jsonData = "[{\"name\": \"Andrea\",\"surname\": \"Bozza\"}]".data(using: .utf8)
+        let jsonData = "[{\"name\": \"Andrea\",\"username\": \"abozza\"}]".data(using: .utf8)
         let apiRespository = FTApiRepo()
         let mockURLSession  = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
         apiRespository.session = mockURLSession
